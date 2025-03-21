@@ -1,0 +1,40 @@
+{
+  "name": "firefox-browser-tools-mcp",
+  "version": "1.0.0",
+  "description": "Firefox extension for Browser Tools MCP",
+  "main": "api-endpoint.js",
+  "scripts": {
+    "start": "node startup.js",
+    "api": "node api-endpoint.js",
+    "monitor": "node auto-monitor.js",
+    "build": "web-ext build --source-dir=. --artifacts-dir=./dist --overwrite-dest",
+    "sign": "node sign-extension.js",
+    "lint": "web-ext lint --source-dir=.",
+    "install-native": "node install-native-app.js"
+  },
+  "keywords": [
+    "firefox-extension",
+    "browser-tools",
+    "mcp",
+    "cursor",
+    "ai-assistant"
+  ],
+  "author": "Witchcraftery",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "web-ext": "^7.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Witchcraftery/firefox-browser-tools-mcp.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
