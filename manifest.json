@@ -1,0 +1,64 @@
+{
+    "name": "Browser Tools MCP for Firefox",
+    "version": "1.0.0",
+    "description": "Firefox extension for Browser Tools MCP that allows AI assistants to capture browser data such as element properties, console logs, and more",
+    "manifest_version": 2,
+    "devtools_page": "devtools.html",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "clipboardWrite",
+        "<all_urls>",
+        "nativeMessaging"
+    ],
+    "browser_action": {
+        "default_title": "Browser Tools MCP",
+        "default_icon": {
+            "48": "icon48.png",
+            "96": "icon96.png"
+        }
+    },
+    "sidebar_action": {
+        "default_title": "Selected Element Data",
+        "default_panel": "selected-element-view.html",
+        "default_icon": {
+            "48": "icon48.png",
+            "96": "icon96.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content-script.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "firefox-browser-tools-mcp@witchcraftery.net",
+            "strict_min_version": "58.0"
+        }
+    },
+    "icons": {
+        "48": "icon48.png",
+        "96": "icon96.png"
+    },
+    "web_accessible_resources": [
+        "selected-element-view.html",
+        "devtools/sidebar.html",
+        "devtools/sidebar.js",
+        "devtools/devtools-panel.js"
+    ]
+}
