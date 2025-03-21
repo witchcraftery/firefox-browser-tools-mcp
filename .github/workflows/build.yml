@@ -1,44 +1,39 @@
 name: Build Firefox Extension
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
-    - name: Use Node.js
-      uses: actions/setup-node@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
         node-version: '18.x'
-        cache: 'npm'
 
     - name: Install dependencies
       run: npm ci
-      
+
     - name: Install web-ext globally
       run: npm install -g web-ext
-      
+
     - name: Create dist directory
       run: mkdir -p dist
 
     - name: Build
       run: npm run build
-      
+
     - name: List files in dist directory
       run: ls -la dist/
-    
+
     - name: Lint
       run: npm run lint
 
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v3
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
       with:
         name: firefox-extension
         path: dist/
