@@ -1,0 +1,1 @@
+This directory contains GitHub-specific files like workflows and templates.
