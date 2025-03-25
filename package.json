@@ -1,0 +1,34 @@
+{
+    "name": "browser-tools-mcp-for-firefox",
+    "version": "1.0.0",
+    "description": "Browser Tools MCP for Firefox - Helps with debugging and development tasks",
+    "main": "background.js",
+    "scripts": {
+        "build": "web-ext build --source-dir=. --artifacts-dir=dist --overwrite-dest",
+        "start": "web-ext run",
+        "lint": "web-ext lint",
+        "sign": "node sign-extension.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/witchcraftery/firefox-browser-tools-mcp.git"
+    },
+    "keywords": [
+        "firefox",
+        "extension",
+        "devtools",
+        "browser",
+        "tools",
+        "mcp"
+    ],
+    "author": "witchcraftery",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/witchcraftery/firefox-browser-tools-mcp/issues"
+    },
+    "homepage": "https://github.com/witchcraftery/firefox-browser-tools-mcp#readme",
+    "devDependencies": {
+        "dotenv": "^16.3.1",
+        "web-ext": "^7.12.0"
+    }
+}

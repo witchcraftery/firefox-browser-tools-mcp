@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Browser Tools MCP - Selected Element</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 16px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-top: 0;
+            color: #333;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #0060df;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0250bc;
+        }
+
+        .btn-group {
+            margin-bottom: 16px;
+        }
+
+        .element-container {
+            border: 1px solid #e0e0e0;
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .element-property {
+            margin-bottom: 8px;
+        }
+
+        .element-property-name {
+            font-weight: 500;
+            margin-right: 8px;
+        }
+
+        .element-property-value {
+            word-break: break-all;
+        }
+
+        .selected-element-html {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 8px;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow: auto;
+        }
+
+        .css-properties {
+            max-height: 200px;
+            overflow: auto;
+            border: 1px solid #e0e0e0;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .css-property {
+            font-family: monospace;
+            margin-bottom: 4px;
+        }
+
+        .property-name {
+            color: #881280;
+        }
+
+        .property-value {
+            color: #1a1aa6;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 32px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Selected Element Data</h1>
+
+        <div class="btn-group">
+            <button id="refresh-btn" class="btn btn-primary">Refresh Data</button>
+        </div>
+
+        <div id="selected-element-container">
+            <div class="empty-state">
+                <p>No element selected yet.</p>
+                <p>Use the Browser Tools MCP DevTools panel to select an element.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="selected-element-view.js"></script>
+</body>
+
+</html>

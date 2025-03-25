@@ -1,0 +1,60 @@
+{
+    "manifest_version": 2,
+    "name": "Browser Tools MCP for Firefox",
+    "version": "1.0.0",
+    "description": "Browser tools for Firefox, including element selection, console, and network logging",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "browser-tools-mcp@witchcraftery.com",
+            "strict_min_version": "60.0"
+        }
+    },
+    "permissions": [
+        "<all_urls>",
+        "tabs",
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "webRequest"
+    ],
+    "background": {
+        "scripts": [
+            "api-endpoint.js",
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "api-endpoint.js",
+                "content-script.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "devtools_page": "devtools.html",
+    "web_accessible_resources": [
+        "panel.html",
+        "panel.js",
+        "selected-element-view.html",
+        "selected-element-view.js",
+        "icons/*.png"
+    ],
+    "browser_action": {
+        "default_title": "Browser Tools MCP",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    }
+}
