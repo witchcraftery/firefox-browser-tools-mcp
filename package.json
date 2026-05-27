@@ -29,6 +29,6 @@
     "homepage": "https://github.com/witchcraftery/firefox-browser-tools-mcp#readme",
     "devDependencies": {
         "dotenv": "^16.3.1",
-        "web-ext": "^9.1.0"
+        "web-ext": "^10.2.0"
     }
 }
